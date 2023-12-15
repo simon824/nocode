@@ -8,11 +8,11 @@ on:
         default: 'apache/hugegraph-commons'
       repository_branch:
         required: true
-        default: 'release-1.0.0'
+        default: 'release-1.2.0'
       release_version:
         required: true
         description: release_version - only influence SVN
-        default: '1.0.0'
+        default: '1.2.0'
       deploy_maven:
         required: true
         type: boolean
@@ -39,6 +39,7 @@ jobs:
         uses: crazy-max/ghaction-import-gpg@v5
         with:
           gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
+          passphrase: ${{ secrets.PASSPHRASE }}
           
       - name: Checkout
         uses: actions/checkout@v3
