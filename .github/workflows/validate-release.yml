@@ -142,7 +142,7 @@ jobs:
               cd .. && echo "skip computer module in java8"
               continue
             fi
-            mvn clean package -Papache-release,stage -DskipTests -ntp -e || exit 1
+            mvn clean package -Pstage -DskipTests -ntp -e || exit 1
             ls -lh
             cd .. || exit
           done
