@@ -59,7 +59,7 @@ jobs:
 
       - name: Package Only
         if: ${{ !inputs.deploy_maven }}
-        run: (echo "just building" && mvn clean package -Papache-release,stage -DskipTests -ntp -e) || exit
+        run: (echo "just building" && mvn clean install -Papache-release,stage -DskipTests -ntp -e) || exit
 
       - name: Package & Release to maven
         if: ${{ inputs.deploy_maven }}
